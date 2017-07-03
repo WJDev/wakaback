@@ -50,7 +50,8 @@ class DB
     {
         $date = self::formatDate($timeframe);
         $stmt = static::getInstance()->prepare(
-            "insert into daily_langs (logdate, language, percent) values (:logdate, :lang, :percent)"
+            "insert into daily_langs (
+logdate, language, percent) values (:logdate, :lang, :percent)"
         );
         $stmt->bindValue(':logdate', $date, \PDO::PARAM_STR);
 

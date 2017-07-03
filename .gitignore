@@ -2,3 +2,4 @@ composer.lock
 vendor
 index.php
 .idea
+src/Config.php
