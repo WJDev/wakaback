@@ -1,83 +1,56 @@
-# wakaback
+# [WakaBack](https://github.com/ElanMan/wakaback)
 
-[![Latest Version on Packagist][ico-version]][link-packagist]
-[![Software License][ico-license]](LICENSE.md)
-[![Build Status][ico-travis]][link-travis]
-[![Coverage Status][ico-scrutinizer]][link-scrutinizer]
-[![Quality Score][ico-code-quality]][link-code-quality]
-[![Total Downloads][ico-downloads]][link-downloads]
-
-**Note:** Replace ```Ben Hall``` ```elanman``` ```https://github.com/elanman``` ```ben@elanman.com``` ```WJDev``` ```wakaback``` ```A simple utility to back up and display your wakatime activity``` with their correct values in [README.md](README.md), [CHANGELOG.md](CHANGELOG.md), [CONTRIBUTING.md](CONTRIBUTING.md), [LICENSE.md](LICENSE.md) and [composer.json](composer.json) files, then delete this line. You can run `$ php prefill.php` in the command line to make all replacements at once. Delete the file prefill.php as well.
-
-This is where your description should go. Try and limit it to a paragraph or two, and maybe throw in a mention of what
-PSRs you support to avoid any confusion with users and contributors.
-
-## Structure
-
-If any of the following are applicable to your project, then the directory structure should follow industry best practises by being named the following.
-
-```
-bin/        
-config/
-src/
-tests/
-vendor/
-```
+A command line utility to back up data from wakatime using it's API, created and maintained by [Ben Hall](http://twitter.com/elanman).
 
 
-## Install
+## Quick start
 
-Via Composer
+Either:
 
-``` bash
-$ composer require WJDev/wakaback
-```
+* [Download the latest release](https://github.com/ElanMan/wakaback/archive/master.zip).
+* [Clone the repo](https://github.com/ElanMan/wakaback.git).
 
-## Usage
 
-``` php
-$skeleton = new WJDev\Wakaback();
-echo $skeleton->echoPhrase('Hello, League!');
-```
+### What's included
 
-## Change log
+Within the download you'll find the following directories and files:
 
-Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
 
-## Testing
+    /
+    ├── Base/
+    │   ├── Helpers/
+    │       ├── DataLogger.php
+    │       ├── ParseResponse.php
+    │       ├── WakaUrl.php
+    │       ├── GetWakaData.php
+    │   ├── Config.php
+    │   ├── DB.php
+    ├── res/
+    │   ├── crontab.txt
+    │   ├── waka.sql
+    ├── .gitignore
+    ├── cron.php
+    ├── LICENSE
+    ├── readme.md
 
-``` bash
-$ composer test
-```
 
-## Contributing
 
-Please see [CONTRIBUTING](CONTRIBUTING.md) and [CONDUCT](CONDUCT.md) for details.
+## Installation
 
-## Security
+* cd into project root
+* Run composer install
+* Amend Base/Config.php credentials
+* Create a MySQL database called 'waka'
+* Import res/waka.sql with either PhpMyAdmin or mysql 'source' command
+* run manually 'php cron.php' or install as a cron job (see sample res/crontab.txt)
 
-If you discover any security related issues, please email ben@elanman.com instead of using the issue tracker.
+## Author
 
-## Credits
+**Ben Hall**
 
-- [Ben Hall][link-author]
-- [All Contributors][link-contributors]
++ <http://twitter.com/elanman>
++ <http://github.com/elanman>
 
-## License
+## Copyright and license
 
-The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
-
-[ico-version]: https://img.shields.io/packagist/v/WJDev/wakaback.svg?style=flat-square
-[ico-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square
-[ico-travis]: https://img.shields.io/travis/WJDev/wakaback/master.svg?style=flat-square
-[ico-scrutinizer]: https://img.shields.io/scrutinizer/coverage/g/WJDev/wakaback.svg?style=flat-square
-[ico-code-quality]: https://img.shields.io/scrutinizer/g/WJDev/wakaback.svg?style=flat-square
-[ico-downloads]: https://img.shields.io/packagist/dt/WJDev/wakaback.svg?style=flat-square
-
-[link-packagist]: https://packagist.org/packages/WJDev/wakaback
-[link-travis]: https://travis-ci.org/WJDev/wakaback
-[link-scrutinizer]: https://scrutinizer-ci.com/g/WJDev/wakaback/code-structure
-[link-code-quality]: https://scrutinizer-ci.com/g/WJDev/wakaback
-[link-downloads]: https://packagist.org/packages/WJDev/wakaback
-[link-author]: https://github.com/elanman
-[link-contributors]: ../../contributors
+Copyright 2014 Ben Hall under [MIT](LICENSE).
