@@ -50,8 +50,7 @@ class DB
     {
         $date = self::formatDate($timeframe);
         $stmt = static::getInstance()->prepare(
-            "insert into daily_langs (
-logdate, language, percent) values (:logdate, :lang, :percent)"
+            "insert into daily_langs (logdate, language, percent) values (:logdate, :lang, :percent)"
         );
         $stmt->bindValue(':logdate', $date, \PDO::PARAM_STR);
 
@@ -71,7 +70,7 @@ logdate, language, percent) values (:logdate, :lang, :percent)"
     {
         $date = self::formatDate($timeframe);
         $stmt = static::getInstance()->prepare(
-            "insert into projects (logdate, name, total_time_mins, total_time_hours) \
+            "insert into projects (logdate, name, total_time_mins, total_time_hours)
               values (:logdate, :project, :mins, :hours)"
         );
         $stmt->bindValue(':logdate', $date, \PDO::PARAM_STR);
@@ -107,7 +106,8 @@ logdate, language, percent) values (:logdate, :lang, :percent)"
     public static function insertUser(array $userdata)
     {
         $stmt = static::getInstance()->prepare(
-            "insert into users (email, wakaid, plan, public_name, timezone) values (:email, :wakaid, :plan, :public_name, :timezone)"
+            "insert into users (email, wakaid, plan, public_name, timezone) 
+            values (:email, :wakaid, :plan, :public_name, :timezone)"
         );
         $stmt->bindValue(':email', $userdata['email'], \PDO::PARAM_STR);
         $stmt->bindValue(':wakaid', $userdata['id'], \PDO::PARAM_STR);

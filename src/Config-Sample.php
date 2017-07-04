@@ -1,7 +1,7 @@
 <?php
 namespace WJDev\Wakaback;
 
-class Config
+class ConfigSample
 {
     public static $apikey = 'your-api-key';
     public static $dbhost = 'localhost';
