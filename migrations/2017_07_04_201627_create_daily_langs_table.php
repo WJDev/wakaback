@@ -15,6 +15,11 @@ class CreateDailyLangsTable extends Migration
     {
         Schema::create('daily_langs', function (Blueprint $table) {
             $table->increments('id');
+            $table->date('logdate');
+            $table->string('language', 10);
+            $table->float('percent', 10, 2);
+            $table->index('id');
+            $table->index('logdate');
             $table->timestamps();
         });
     }

@@ -15,6 +15,11 @@ class CreateDailyTotalsTable extends Migration
     {
         Schema::create('daily_totals', function (Blueprint $table) {
             $table->increments('id');
+            $table->date('logdate');
+            $table->integer('total_mins')->unsigned();
+            $table->integer('total_hours')->unsigned();
+            $table->index('id');
+            $table->index('logdate');
             $table->timestamps();
         });
     }
